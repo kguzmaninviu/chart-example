@@ -1,14 +1,14 @@
 import { createChart } from "lightweight-charts";
 import { useRef, useEffect } from "react";
-import { data_48_1Y } from "../../test-data";
+import { data } from "../../test-data";
 
-const Chart = ({ title = 'APPL' }) => {
+const Chart = ({ title = 'APPL', index = 0 }) => {
     const chartRef = useRef(null);
 
     useEffect(() => {
         const chart = createChart(chartRef.current, { width: window.width, height: 300 });
         const lineSeries = chart.addLineSeries();
-        lineSeries.setData(data_48_1Y);
+        lineSeries.setData(data[index]);
     },[])
 
     return (

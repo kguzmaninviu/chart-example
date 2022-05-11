@@ -5,9 +5,9 @@ function App() {
   return (
     <div className="App">
       <h1>Charting Example</h1>
-      <Chart />
+      <Chart title='1Y'/>
 
-      <Chart title='MELI' />
+      <Chart title='5Y' index={1} />
     </div>
   );
 }
