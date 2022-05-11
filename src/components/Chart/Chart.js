@@ -1,3 +1,4 @@
+import './Chart.css';
 import { createChart } from "lightweight-charts";
 import { useRef, useEffect, useState } from "react";
 import { data } from "../../test-data";
@@ -126,8 +127,8 @@ const Chart = ({ title = 'APPL', index = 0 }) => {
 
     return (
         <div>
-          <h2>{`${title} - ${periods[index]}`}</h2>
-          <div id="chart-0" ref={chartRef} />
+          <div className='chart' id="chart-0" ref={chartRef} />
+          <text>{`${title} - ${periods[index]}`}</text>
         </div>
     );
 }
