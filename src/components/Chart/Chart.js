@@ -128,7 +128,7 @@ const Chart = ({ title = 'APPL', index = 0 }) => {
     return (
         <div>
           <div className='chart' id="chart-0" ref={chartRef} />
-          <text>{`${title} - ${periods[index]}`}</text>
+          <h2>{`${title} - ${periods[index]}`}</h2>
         </div>
     );
 }
