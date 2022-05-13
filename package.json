@@ -1,9 +1,11 @@
 {
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
+    "env-cmd": "^10.1.0",
     "kaktana-react-lightweight-charts": "^2.0.0",
     "lightweight-charts": "^3.8.0",
     "react": "^17.0.2",
@@ -14,8 +16,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build:staging": "env-cmd -f .env npm run build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "aws s3 sync build/ s3://static.inviu.com.ar/charts"
   },
   "eslintConfig": {
     "extends": [
