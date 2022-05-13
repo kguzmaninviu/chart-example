@@ -1,15 +1,13 @@
 import { useState } from "react";
 import './ChartContainer.css';
 import Chart from "../Chart/Chart";
+import TermButtons from "../TermButtons/TermButtons";
 
-const ChartContainer = ({ title = 'APPL' }) => {
+const ChartContainer = ({ title = 'APPL', terms }) => {
     const [ currentIndex, setCurrentIndex ] = useState(0);
     return (
         <div className="container">
-            <div className="buttonsContainer">
-                <button className="button" onClick={() => setCurrentIndex(0)}>1Y</button>
-                <button className="button" onClick={() => setCurrentIndex(1)}>5Y</button>
-            </div>
+            {!!terms && <TermButtons terms={terms} onPressTerms={index => setCurrentIndex(index)} />}
             <Chart title={title} index={currentIndex}/>
         </div>
     );

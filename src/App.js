@@ -1,11 +1,18 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Chart from './components/Chart/Chart';
 import ChartContainer from './components/ChartContainer/ChartContainer';
+import Home from './components/Home';
+import { TERMS } from './constants/commons';
 
 function App() {
   return (
     <div className="App">
-      <ChartContainer title={'AAPL'}/>
+      <BrowserRouter>
+        <Routes>
+          <Route exact path='/' element={<Home />}></Route>
+          <Route exact path='/chart' element={<ChartContainer terms={TERMS} />}></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

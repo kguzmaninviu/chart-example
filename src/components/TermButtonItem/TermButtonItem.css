@@ -1,5 +1,7 @@
-.container {
-    padding-top: 20px;
+.buttonContainer {
+    display: flex;
+    flex:1;
+    flex-direction: row;
 }
 
 .button {
