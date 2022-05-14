@@ -7,7 +7,7 @@ const TermButtons = ({ terms, onPressTerms }) => {
         <div className="buttonsContainer">
             {terms.map((term, index) => {
                 return (
-                    <TermButtonItem key={`${term.title}-${index}`} title={term.title} onClick={() => onPressTerms(index)} />
+                    <TermButtonItem key={`${term.title}-${index}`} title={term.title} onClick={() => onPressTerms(term.id)} />
                 )
             })}
         </div>

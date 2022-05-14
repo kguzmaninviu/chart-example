@@ -1,9 +1,12 @@
 
 import React from 'react';
-import ChartContainer from './ChartContainer/ChartContainer';
  
 function Home (){
-    return <ChartContainer title={'MELI'}/>
+    return (
+        <div>
+            <h1>Charts</h1>
+        </div>
+    )
 }
  
 export default Home;

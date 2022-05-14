@@ -4,7 +4,7 @@ const fs = require('fs');
 
 let DATA;
 const INPUT_FILE_NAME = 'data_48_1Y.json';
-const OUTPUT_FILE_NAME = 'test-data.js';
+const OUTPUT_FILE_NAME = 'test-data-2.js';
 
 function witeDataIn({ inputFile = INPUT_FILE_NAME, outputFile =  OUTPUT_FILE_NAME}) {
 

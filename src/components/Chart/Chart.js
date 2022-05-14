@@ -1,7 +1,7 @@
 import './Chart.css';
 import { createChart } from "lightweight-charts";
 import { useRef, useEffect, useState } from "react";
-import { data } from "../../test-data";
+import { testData2 } from "../../test-data";
 
 const chartOptions = {
     width: window.width,
@@ -90,24 +90,19 @@ const lightTheme = {
 	},
 };
 
-const themesData = [
-	darkTheme,
-	lightTheme,
-];
+const themesData = {
+	'1Y': darkTheme,
+	'5Y': lightTheme,
+};
 
-const periods = [
-    '1Y',
-    '5y'
-];
-
-const Chart = ({ title = 'APPL', index = 0 }) => {
+const Chart = ({ data = testData2, title = 'APPL', index = 0, term = '1Y' }) => {
     const [ chart, setChart ] = useState(null);
 
     const chartRef = useRef(null);
 
     const createChartWith = (data, theme = 'Dark') => {
         const chart = createChart(chartRef.current, chartOptions); 
-        chart.applyOptions(themesData[index].chart);
+        chart.applyOptions(themesData[term].chart);
 
         const lineSeries = chart.addLineSeries();
         lineSeries.setData(data);
@@ -115,20 +110,20 @@ const Chart = ({ title = 'APPL', index = 0 }) => {
     }
 
     useEffect(() => {
-        createChartWith(data[index])
+        createChartWith(data)
     },[])
 
     useEffect(() => {
         if (chart !== null) {
             chart?.remove();
-            createChartWith(data[index])
+            createChartWith(data)
         }
-    },[index])
+    },[data])
 
     return (
         <div>
           <div className='chart' id="chart-0" ref={chartRef} />
-          <h2>{`${title} - ${periods[index]}`}</h2>
+          <h2>{`${title} - ${term}`}</h2>
         </div>
     );
 }
