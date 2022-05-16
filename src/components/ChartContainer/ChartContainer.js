@@ -9,6 +9,7 @@ import { sleep } from "../../utils/utils";
 
 const ChartContainer = ({ title = 'APPL', terms }) => {
     let { ticker } = useParams();
+    if (ticker === undefined) ticker = 'AAPL';
     const [ currentIndex, setCurrentIndex ] = useState(0);
     const [ currentTerm, setCurrentTerm ] = useState(TERMS[0].id);
 

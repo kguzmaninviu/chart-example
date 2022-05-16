@@ -1,10 +1,12 @@
 
 import React from 'react';
+import { TERMS } from '../constants/commons';
+import ChartContainer from './ChartContainer/ChartContainer';
  
 function Home (){
     return (
         <div>
-            <h1>Charts</h1>
+            <ChartContainer terms={TERMS} />
         </div>
     )
 }
